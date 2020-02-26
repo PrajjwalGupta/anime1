@@ -39,6 +39,8 @@ p {
   position: absolute;
 }
 
+
+/*here the veggies images are targetted for first section*/
 .ingredient-images {
   position: absolute;
   width: 400px;
@@ -101,6 +103,10 @@ p {
   right: 10px;
 }
 
+/*first section over*/
+
+
+/*here the veggies images are targetted for second section*/
 .second-section {
   width: 100%;
   height: 100vh;
@@ -111,6 +117,7 @@ p {
   position: relative;
 }
 
+/*here property 'absolute of image wrapper overlaps the bottom image'*/
 .second-section .images-wrapper {
   position: absolute;
   display: flex;
@@ -124,6 +131,9 @@ p {
   height: 100%;
 }
 
+/*second section over*/
+
+/*here the veggies images are targetted for third section*/
 .third-section {
   width: 100%;
   height: 150vh;
@@ -155,6 +165,10 @@ p {
   position: relative;
 }
 
+/*second section over*/
+
+/*here the veggies images are targetted for fourth section*/
+
 .forth-section .images-wrapper {
   display: flex;
   flex-direction: column;
@@ -163,4 +177,15 @@ p {
 
 .forth-section .images-wrapper img {
   position: absolute;
+}
+
+
+footer{
+  background: #eee;
+    padding:20px;
+    text-align:center;
+    font-family: "Poppins";
+  color: #43515c;
+  font-size: 24px;
+  font-weight: 100;
 }

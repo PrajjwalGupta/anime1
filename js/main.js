@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let timeline = new TimelineMax();
     timeline
-    .from('.section_1_01', 4, {
+    .from('.section_1_01', 4, {  // 4 = seconds of duratin after image load ,, -as all animation do not starts at once so we have introduced -4 seconds offset to sync.
         y: -100,
         x: -150,
-        ease: Power3.easeInOut
+        ease: Power3.easeInOut // x, y are starting coordinates
     })
     .from('.section_1_02', 4, {
         y: -150,
@@ -52,33 +52,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let scene = new ScrollMagic.Scene({
         triggerElement: '.first-section',
         duration: '100%',
-        triggerHook: 0,
-        offset: '300'
+        triggerHook: 0, //means first section  hits , start animation
+        offset: '300' //animation starts when 300 px has been covered in screen
     })
     .setTween(timeline)
-    .setPin('.first-section')
+    .setPin('.first-section') //do not pass first section without animation complete.
     .addTo(controller);
 
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     let timeline2 = new TimelineMax();
     timeline2
     .to('.top .image-container', 4, {
-        height: 0
+        height: 0  //in css its height is 100, here changed to 0
     });
 
     let scene2 = new ScrollMagic.Scene({
         triggerElement: '.second-section',
         duration: '100%',
         triggerHook: 0,
-        offset: '100'
+        offset: '100'  //from 100 px from top animation will start
     })
     .setTween(timeline2)
     .setPin('.second-section')
     .addTo(controller);
 
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     let timeline3 = new TimelineMax();
     timeline3
     .to('.section_3_01', 4, {
-        y: -250,
+        y: -250,                /////////-250 moves images to top , positive values will move downward , 0 is stable
         ease: Power3.easeInOut
     })
     .to('.section_3_02', 4, {
@@ -106,19 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerElement: '.third-section',
         duration: '100%',
         triggerHook: 0,
-        offset: '200'
+        offset: '200'  //starts when 200 px from top
     })
     .setTween(timeline3)
     .setPin('.third-section')
     .addTo(controller);
 
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     let timeline4 = new TimelineMax();
     timeline4
     .to('.section_4_01', 4, {
-        autoAlpha: 0
+        autoAlpha: 0  //used to change image opacity to 0
     })
     .from('.section_4_02', 4, {
-        autoAlpha: 0
+        autoAlpha: 0         //it will change to 1 after scroll, as defined in css file
     }, '-=4')
     .from('.section_4_03', 4, {
         autoAlpha: 0
